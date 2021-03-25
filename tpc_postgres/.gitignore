@@ -1,0 +1,9 @@
+enroot_postgres
+enroot_postgres/*
+postgresdata
+postgresdata/*
+*.sqsh
+sqsh_files
+sqsh_files/*
+tpch-kit
+tpch-kit/*
