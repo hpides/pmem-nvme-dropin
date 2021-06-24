@@ -7,7 +7,7 @@ In order to build the project, `cmake` 3.16 or newer and a compiler supporting C
 
 ```
 cd build
-cmake .. --DCMAKE_BUILD_TYPE={Debug, Release}
+cmake .. -DCMAKE_BUILD_TYPE={Debug, Release}
 make clean
 make
 ```
