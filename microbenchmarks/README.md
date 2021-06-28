@@ -3,7 +3,16 @@
 In this folder, you find the microbenchmarks described in the paper.
 
 ## Building
-In order to build the project, `cmake` 3.16 or newer and a compiler supporting C++ 17 is required. We statically link against a built version of PMDK. The results in the paper are based on commit `3ef505c8c00773f55e177df168c8fb2c8d8b72a5` of PMDK. Newer versions might break. You need to adjust the paths in lines 13,14 of `CMakeLists.txt`.  After creating the build folder (`mkdir build`), you can run the following to build the benchmarks:
+In order to build the project, `cmake` 3.16 or newer and a compiler supporting C++ 17 is required. We statically link against a built version of PMDK. The results in the paper are based on commit `3ef505c8c00773f55e177df168c8fb2c8d8b72a5` of PMDK. Newer versions might break. Initially, follow these steps to build PMDK (replace the path where you want to install pmdk to):
+```
+git clone https://github.com/pmem/pmdk.git
+cd pmdk
+git checkout 3ef505c8c00773f55e177df168c8fb2c8d8b72a5 # not necessarily required, but newer versions might break
+make
+make install prefix=/path/to/your/pmdk/installation
+```
+
+Next, within your clone of our project, you need to adjust the paths in lines 13,14 of `CMakeLists.txt` to the path you installed pmdk to. After creating the build folder (`mkdir build`), you can run the following to build the benchmarks:
 
 ```
 cd build
